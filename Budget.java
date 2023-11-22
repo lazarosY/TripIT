@@ -80,4 +80,10 @@ public class Budget extends GPT {
         // This can be enhanced to provide more sophisticated suggestions based on user preferences and budget
         return "Alternative destination suggestion based on your budget and preferences.";
     }
+public static void main(String[] args) {
+        // Create an instance of Budget and test the functionality
+        Budget myBudget = new Budget(500, "Paris", "Sightseeing");
+        System.out.println(myBudget.planTrip());
+        // Additional testing code as required
+    }
 }
