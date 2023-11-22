@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Budget {
+public class Budget extends GPT {
     private double userBudget;
     private String destination;
     private String preferences;
@@ -24,7 +24,7 @@ public class Budget {
 
     public void setDestination(String destination) {
         this.destination = destination;
-        this.minimumRequiredBudget = GPTApiHelper.getMinimumBudgetForDestination(destination); // Fetch minimum required budget
+        this.minimumRequiredBudget = GPT.getMinimumBudgetForDestination(destination); // Fetch minimum required budget
     }
 
     public String getDestination() {
