@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Budget extends GPT {
+public class Budget {
     private double userBudget;
     private String destination;
     private String preferences;
@@ -24,7 +24,7 @@ public class Budget extends GPT {
 
     public void setDestination(String destination) {
         this.destination = destination;
-        this.minimumRequiredBudget = GPT.getMinimumBudgetForDestination(destination); // Fetch minimum required budget
+        this.minimumRequiredBudget = GPTApiHelper.getMinimumBudgetForDestination(destination); // Fetch minimum required budget
     }
 
     public String getDestination() {
@@ -79,11 +79,5 @@ public class Budget extends GPT {
         // Placeholder for alternative destination suggestion
         // This can be enhanced to provide more sophisticated suggestions based on user preferences and budget
         return "Alternative destination suggestion based on your budget and preferences.";
-    }
-public static void main(String[] args) {
-        // Create an instance of Budget and test the functionality
-        Budget myBudget = new Budget(500, "Paris", "Sightseeing");
-        System.out.println(myBudget.planTrip());
-        // Additional testing code as required
     }
 }
