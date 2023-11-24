@@ -6,6 +6,8 @@ import java.time.temporal.ChronoUnit;
 
 
 public class UserInput {
+    private long diffInDays;
+    private double bud;
     Scanner read = new Scanner(System.in);
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -18,19 +20,27 @@ public class UserInput {
     public void budget() {
         System.out.println("How much would you like to spend? (In €)");
         double bud = read.nextDouble();
-        
+        read.nextLine();
     }
 
-    public void getTripDates() throws ParseException {
+    public double getbud(){
+        return bud;
+    }
+    public void getTripDates() {
        System.out.println("When does your trip begin? (YYYY-MM-DD)");
         String temp1 = read.nextLine();
         LocalDate date1 = LocalDate.parse(temp1);
         System.out.println("When does your trip end? (YYYY-MM-DD)");
         String temp2 = read.nextLine();
         LocalDate date2 = LocalDate.parse(temp2);
-        long diffInDays = ChronoUnit.DAYS.between(date1, date2);
+        diffInDays = ChronoUnit.DAYS.between(date1, date2);
         System.out.println(diffInDays);
     }
+
+    public long getDiffInDays() {
+        return diffInDays;
+    }
+
     public void pref() {
         boolean correct_answer = false;
         String userPref = "";
