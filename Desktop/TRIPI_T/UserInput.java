@@ -1,31 +1,37 @@
+package trip;
 import java.util.Scanner;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
 
 public class UserInput {
+    private String userPref = "";
     private long diffInDays;
     private double bud;
+    private String destination;
     Scanner read = new Scanner(System.in);
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-
     public void dest() {
         System.out.println("Where whould you like to travel?");
-        String destination = read.nextLine();
+        destination = read.nextLine();
+    }
+
+    public String getdestination(){
+        return destination;
     }
 
     public void budget() {
         System.out.println("How much would you like to spend? (In €)");
-        double bud = read.nextDouble();
+         bud = read.nextDouble();
         read.nextLine();
     }
 
     public double getbud(){
         return bud;
     }
+
     public void getTripDates() {
        System.out.println("When does your trip begin? (YYYY-MM-DD)");
         String temp1 = read.nextLine();
@@ -43,8 +49,7 @@ public class UserInput {
 
     public void pref() {
         boolean correct_answer = false;
-        String userPref = "";
-        Scanner scanner = new Scanner(System.in); // Δημιουργία ενός Scanner object
+        Scanner scanner = new Scanner(System.in); 
         while(correct_answer != true) {
             System.out.println("Tell us about your interests; (E.g. football,museum,shopping...)");
             userPref = scanner.nextLine(); 
@@ -65,6 +70,7 @@ public class UserInput {
             }   
         }
     }
-
+    public String getPref() {
+        return userPref;
+    }
 }
-    
