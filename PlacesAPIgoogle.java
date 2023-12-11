@@ -10,8 +10,8 @@ import org.json.JSONObject;
 
 public class PlacesAPIgoogle {
     public static void main(String[] args) {
-        String x = "72";
-        String y = "64";
+        String x = "40.7128";
+        String y = "-74.0060";
         String placeId = getplaceid(x, y);
         System.out.println("Place ID: " + placeId);
     }
@@ -19,8 +19,8 @@ public class PlacesAPIgoogle {
     public static String getplaceid(String x, String y) {
         String lat = x;
         String lng = y;
-        String gapikey = "AIzaSyDUBn3ug6L3u4mIsSR6Tgkl9_6_x6BmZMI";
-        String purl = "http://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + lng + "&key=" + gapikey;
+        String gapikey = "AIzaSyBz32QZHuvccsYTCsAe9Wxd0RCWO2hXDas";
+        String purl = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + lng + "&key=" + gapikey;
 
         URL url = null;
         try {
