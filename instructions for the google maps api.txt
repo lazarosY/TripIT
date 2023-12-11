@@ -1,3 +1,5 @@
 For the PlacesAPIgoogle , you need to ask chatgpt for the latitude and longtitude of the proposed location and give them to the method.	
 --> it will get you the place_id of the place chat recommended
 --> you will then feed the place_id you get into the GoogleMAPS method and it will return 5 reviews. 
+
+FINAL NOTE : IN ORDER TO USE THE PLACESAPI GOOGLE YOU NEED TO ADD THE "json-20231013.jar" as a referenced library after you have added the file in a project folder, this jar is needed in order for java to read from .json objects. 
