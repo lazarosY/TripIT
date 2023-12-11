@@ -8,14 +8,14 @@ import java.net.URL;
 public class MAPS{
     public static void main (String[] args){
         String dest= "athens greece";
-        String place_id="ChIJ8UNwBh-9oRQR3Y1mdkU1Nic";
+        String place_id="ChIJgSMyRUu9oRQRS9UFR1xmJrE";
         MAPS help = new MAPS();
        System.out.print(help.GoogleMaps(place_id));
     }
     public static String GoogleMaps(String placeid) {
     //HTTP REQUEST for the API
-    String gapiKey = "AIzaSyDUBn3ug6L3u4mIsSR6Tgkl9_6_x6BmZMI";
-    String gurl=("https://maps.googleapis.com/maps/api/place/details/json?fields=rating&reviews&place_id="+placeid+"&key="+gapiKey);
+    String gapiKey = "AIzaSyBz32QZHuvccsYTCsAe9Wxd0RCWO2hXDas";
+    String gurl=("https://maps.googleapis.com/maps/api/place/details/json?fields=reviews&place_id="+placeid+"&key="+gapiKey);//instead of reviews I can add rating, for a general rating
     try{ 
         // HTTP REQUEST
         URL gmaps = new URL(gurl);
