@@ -1,7 +1,7 @@
-package trip;
 import java.util.Scanner;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.time.temporal.ChronoUnit;
 
 
@@ -14,8 +14,19 @@ public class UserInput {
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
     public void dest() {
-        System.out.println("Where whould you like to travel?");
-        destination = read.nextLine();
+         while (true) {
+            try {
+                System.out.println("Where would you like to travel?");
+                String input = read.nextLine();
+                if (!input.matches("[a-zA-Z]+")) {
+                    throw new IllegalArgumentException("Please enter a valid destination without numbers or special characters.");
+                }
+                destination = input;
+                break;
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
     }
 
     public String getdestination(){
@@ -23,9 +34,22 @@ public class UserInput {
     }
 
     public void budget() {
-        System.out.println("How much would you like to spend? (In €)");
-         bud = read.nextDouble();
-        read.nextLine();
+        boolean validInput = false;
+        while (!validInput) {
+            try {
+                System.out.println("How much would you like to spend? (In €)");
+                bud = read.nextDouble();
+                if (bud <= 0) {
+                    throw new IllegalArgumentException("Budget should be a positive number.");
+                }
+                validInput = true;
+            } catch (java.util.InputMismatchException e) {
+                System.out.println("Please enter a valid number for the budget.");
+                read.nextLine(); // Consume invalid input
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
+        }
     }
 
     public double getbud(){
@@ -33,14 +57,30 @@ public class UserInput {
     }
 
     public void getTripDates() {
-       System.out.println("When does your trip begin? (YYYY-MM-DD)");
-        String temp1 = read.nextLine();
-        LocalDate date1 = LocalDate.parse(temp1);
-        System.out.println("When does your trip end? (YYYY-MM-DD)");
-        String temp2 = read.nextLine();
-        LocalDate date2 = LocalDate.parse(temp2);
-        diffInDays = ChronoUnit.DAYS.between(date1, date2);
-        System.out.println(diffInDays);
+        while (true) {
+            try{
+                LocalDate today = LocalDate.now();
+                System.out.println("When does your trip begin? (YYYY-MM-DD)");
+                String temp1 = read.nextLine();
+                LocalDate date1 = LocalDate.parse(temp1);
+                if (date1.isBefore(today.plusDays(1))) {
+                    System.out.println("Departure date should be at least one day ahead of today. Please re-enter.");
+                    continue;
+                }
+                System.out.println("When does your trip end? (YYYY-MM-DD)");
+                String temp2 = read.nextLine();
+                LocalDate date2 = LocalDate.parse(temp2);
+                if (date2.isBefore(date1)) {
+                    System.out.println("Arrival date should be after the departure date. Please re-enter.");
+                    continue;
+                }
+                diffInDays = ChronoUnit.DAYS.between(date1, date2);
+                System.out.println("Trip duration: " + diffInDays + " days");
+                break;
+            } catch (DateTimeParseException e) {
+                System.out.println("Invalid date format! Please enter dates in YYYY-MM-DD format.");
+            }
+        }
     }
 
     public long getDiffInDays() {
@@ -51,7 +91,7 @@ public class UserInput {
         boolean correct_answer = false;
         Scanner scanner = new Scanner(System.in); 
         while(correct_answer != true) {
-            System.out.println("Tell us about your interests; (E.g. football,museum,shopping...)");
+            System.out.println("Tell us about your interests; (E.g. football, museum, shopping...)");
             userPref = scanner.nextLine(); 
             String regex = "^(\\w+)(,\\s*\\w+){0,4}$";
             String[] interests = userPref.split(",\\s*");
@@ -70,6 +110,7 @@ public class UserInput {
             }   
         }
     }
+    
     public String getPref() {
         return userPref;
     }

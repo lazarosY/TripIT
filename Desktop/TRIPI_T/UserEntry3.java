@@ -1,4 +1,3 @@
-package trip;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -41,7 +40,6 @@ public class UserEntry3 {
 
     public void userReg() {
         userEmail();
-
         if (users.containsKey(email)) {
             System.out.println("The email you entered already has an account.");
             System.out.println("Do you want to log in with this email? (Y/N)");

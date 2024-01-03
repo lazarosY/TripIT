@@ -1,4 +1,3 @@
-package trip;
 import java.util.Scanner;
 public class DateComment {
     public long datecomparison(UserInput userInput, int recnum) {
@@ -10,8 +9,24 @@ public class DateComment {
             System.out.println("The recommended days for visiting this destination are " + recnum + ". Would you like to change the dates of your trip?");
             System.out.println("Insert Yes for change, No for keeping your initial choice.");
             Scanner input = new Scanner(System.in);
-            String ans = input.nextLine();
-            return Changedate(ans, userInput, recnum,daysnum); 
+            String ans;
+            boolean valid = false;
+            boolean messageDisplayed = false; // Προσθήκη μεταβλητής για το μήνυμα
+            do {
+                ans = input.nextLine();
+                if (!ans.equalsIgnoreCase("Yes") && !ans.equalsIgnoreCase("No")) {
+                    System.out.println("Please enter only Yes or No.");
+                } else {
+                    valid = true;
+                    if (!messageDisplayed) {
+                        messageDisplayed = true;
+                    } else {
+                        System.out.println("We're keeping your initial choice of dates.");
+                        return daysnum;
+                    }
+                }
+            } while (!valid);
+            return Changedate(ans, userInput, recnum, daysnum); 
         }
     }
 
