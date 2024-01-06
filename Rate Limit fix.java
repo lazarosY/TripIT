@@ -52,24 +52,11 @@ public class Main {
             + " with the total money that can be spent being " + bud + ".";
         String response2 = GPT.chatGPT(message2);
         String message4 =  response2 + "I want you to return the name of one of the places you proposed with no introduction , no explanation just a name";
-        String response4 = GPT.chatGPT(message4);
-        while (retryCount < 3) {  // You can adjust the number of retries as needed
-            try {
-                //have to add requests here
+        String response4 = GPT2.chatGPT2(message4);
                 message5= "give me the latitude of "+ response4 +" with no introduction , no explanation just a number";
-                latitude = GPT.chatGPT(message5);
+                latitude = GPT2.chatGPT2(message5);
                 response4 ="give me the longtitude of"+response4+ "with no introduction , no explanation just a number";
-                longtitude = GPT.chatGPT(message5);
-                break;  
-            } catch (Exception e) {
-                if (e.getMessage().contains("429")) {
-                    //Retries if the rate is limited
-                    System.out.println("Rate limited. Retrying after 5 seconds...");
-                    sleep(5000);  
-                    retryCount++;
-                }
-            }
-        }
+                longtitude = GPT2.chatGPT2(message5);
         PlacesAPIgoogle obj3 = new PlacesAPIgoogle();
         String id= obj3.getplaceid(latitude,longtitude);
         MAPS obj4 = new MAPS();
