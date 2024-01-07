@@ -8,12 +8,18 @@ import java.net.URL;
 import org.json.JSONArray;
 import org.json.JSONObject;
 public class MAPS{
-    public static void main (String[] args){
-        String dest= "athens greece";
-        String place_id="ChIJgSMyRUu9oRQRS9UFR1xmJrE";
+    public static void main (String[] args) {
+        
+        String x = "37.9686";
+        String y = "23.7294";
+        PlacesAPIgoogle ghelp = new PlacesAPIgoogle();
+        String place_id=ghelp.getplaceid(x, y);
+        System.out.println("----------------------------:     " + place_id);
+
         MAPS help = new MAPS();
         JSONObject json = new JSONObject(help.GoogleReviews(place_id));
         JSONArray jsonarr = json.getJSONObject("result").getJSONArray("reviews");
+        
         for (int i=0;i<jsonarr.length();i++){
             JSONObject review = jsonarr.getJSONObject(i);
             String sreview = review.toString();
@@ -56,7 +62,7 @@ public class MAPS{
     
     
     
-    public static String GoogleReviews(String placeid) {
+    public String GoogleReviews(String placeid) {
     //HTTP REQUEST for the API
     String gapiKey = "AIzaSyBz32QZHuvccsYTCsAe9Wxd0RCWO2hXDas";
     String gurl=("https://maps.googleapis.com/maps/api/place/details/json?fields=reviews&place_id="+placeid+"&key="+gapiKey);//instead of reviews I can add rating, for a general rating
