@@ -59,6 +59,7 @@ public class Main {
         for (int i=0;i<jsonarr.length();i++){
             JSONObject review = jsonarr.getJSONObject(i);
             String sreview = review.toString();
+            sreview = help.GetSubstring2(sreview);
             System.out.println(sreview);
         }
        
