@@ -23,6 +23,7 @@ public class MAPS{
         for (int i=0;i<jsonarr.length();i++){
             JSONObject review = jsonarr.getJSONObject(i);
             String sreview = review.toString();
+            sreview = GetSubstring2(sreview);
             System.out.println(sreview);
         }
        
@@ -95,6 +96,11 @@ public static String GetSubstring(String response) {
     return response.substring(startMarker, endMarker); // Returns the response string
 }
 
+public static String GetSubstring2(String response) {
+    int startMarker = response.indexOf("reviews"); // Marks the start of the response
+    int endMarker = response.indexOf("}", startMarker); // Marks the end of the response
+    return response.substring(startMarker, endMarker); // Returns the response string
+}
 
 
 }
