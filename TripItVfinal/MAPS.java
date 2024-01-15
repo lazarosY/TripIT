@@ -1,3 +1,5 @@
+package com.example;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -33,7 +35,7 @@ public class MAPS {
 
     public static String GoogleRating(String placeid) {
         // HTTP REQUEST for the API
-        String gapiKey = "AIzaSyBz32QZHuvccsYTCsAe9Wxd0RCWO2hXDas";
+        String gapiKey = Configuration.getApiKeyMaps();
         String gurl = ("https://maps.googleapis.com/maps/api/place/details/json?fields=rating&place_id=" + placeid
                 + "&key=" + gapiKey);// instead of reviews I can add rating, for a general rating
         try {

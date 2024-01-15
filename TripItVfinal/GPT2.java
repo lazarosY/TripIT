@@ -1,3 +1,5 @@
+package com.example;
+
 import java.util.Scanner;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,7 +15,7 @@ public class GPT2 {
 
     public static String chatGPT2(String message) {
         String url = "https://api.openai.com/v1/chat/completions";
-        String apiKey = "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";
+        String apiKey = Configuration.getApiKeyGPT2();
         String model = "gpt-3.5-turbo";
 
         try{

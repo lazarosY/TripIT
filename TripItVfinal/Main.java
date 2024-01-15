@@ -1,3 +1,5 @@
+package com.example;
+
 import java.io.IOException;
 import java.text.ParseException;
 import org.json.JSONArray;
@@ -30,7 +32,6 @@ public class Main {
         DateComment obj = new DateComment();
         Double bud = user.getbud();
         long days = obj.dateComparison(user, ChatDays);
-        System.out.println(days);
         String message3 = " For visiting " + city + " for " + days +
                 " an absolute amount of money in euros based on only the activities someone would do without containing the accomodation and the transport,with no introduction,no explanation, no other word after the number just the number.";
         String response3 = GPT.chatGPT(message3);
@@ -88,7 +89,7 @@ public class Main {
         }
         try {
             ProgramCreator.programMaker(response2, dest);
-            System.out.println("The file was successfully created on the Desktop.");
+            System.out.println("Your trip itinerary was successfully created on the Desktop.");
         } catch (IOException e) {
             System.err.println("Error while creating the file: " + e.getMessage());
         }

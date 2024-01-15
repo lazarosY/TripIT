@@ -1,3 +1,5 @@
+package com.example;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -8,7 +10,7 @@ public class SetupDatabase {
     public static void dbSetup() {
         String url = "jdbc:mysql://localhost:3306/";
         String user = "root";
-        String password = "tripit1234";
+        String password = Configuration.getDbPassword();
 
         String dbName = "tripit";
         String tableName = "user_credentials";
@@ -38,5 +40,7 @@ public class SetupDatabase {
         System.err.println("Error: " + e.getMessage());
         System.err.println("SQL State: " + e.getSQLState());
         System.err.println("Error Code: " + e.getErrorCode());
+        System.out.println("Database is not set-up correctly. Follow the isntructions provided in README file.");
+        System.exit(1);
     }
 }

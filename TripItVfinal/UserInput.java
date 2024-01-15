@@ -1,3 +1,5 @@
+package com.example;
+
 import java.util.Scanner;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;

@@ -1,10 +1,12 @@
+package com.example;
+
 import java.sql.*;
 
 public class DataBaseConnectivity {
 
     private static final String DB_URL = "jdbc:mysql://localhost:3306/tripit";
     private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "tripit1234";
+    private static final String DB_PASSWORD = Configuration.getDbPassword();
 
     public static void insertData(String email, String salt, String hashedPassword) {
         UserEntry3 ue = new UserEntry3();

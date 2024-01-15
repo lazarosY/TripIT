@@ -1,3 +1,5 @@
+package com.example;
+
 import com.google.maps.*;
 import com.google.maps.model.PlaceDetails;
 import com.google.maps.model.PlacesSearchResponse;
@@ -7,7 +9,7 @@ public class PlaceReviews {
 
     public static void reviews(String place) {
 
-        String apiKey = "AIzaSyBz32QZHuvccsYTCsAe9Wxd0RCWO2hXDas";
+        String apiKey = Configuration.getApiKeyMaps();
 
         GeoApiContext context = new GeoApiContext.Builder().apiKey(apiKey).build();
 
