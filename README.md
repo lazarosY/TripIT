@@ -81,7 +81,7 @@ Then follow the steps below:
 
 ## Διάγραμμα UML
 
-![alt text][([http://url/to/img.png](https://github.com/lazarosY/TripIT/blob/main/UML.png?raw=true))](https://github.com/lazarosY/TripIT/blob/main/UML.png)
+![alt text](https://github.com/lazarosY/TripIT/blob/main/UML.png?raw=true)
 
 
 
