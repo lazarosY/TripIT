@@ -81,34 +81,7 @@ Then follow the steps below:
 
 ## Διάγραμμα UML
 
-PlacesAPI 	  Main         		           GPT	            OpenAIapi
-|  			   |                          	|		            |
-|   			   |                          	|		            |
-|  			   |-----> UserInput()       	   |---->Request()	|
-|   			   |                             |		            |	
-|   			   |<----- VacationProgram       |   Response <----|
-|  			   |                             |		            |
-|   			   |                             |		            |		
-|   			   |----->Reqlat,lng_values      |		            |
-|   			   |                             |		            |
-|   	     <---|<----- Coordinates           |		            |
-|---->Reviews()|                             |		            |
-|              |                             |                 |
-|              |                             |                 |
-
-
-  Main        Database_Connectivity
-   |                          |
-   |                          |
-   |-----> UserInput()        |
-   |                          |
-   |<----- Login()            |
-   |                          |
-   |                          |
-   |-----> UserInput()        |
-   |                          |
-   |<----- Register()         |
-   |                          |
+![alt text][([http://url/to/img.png](https://github.com/lazarosY/TripIT/blob/main/UML.png?raw=true))](https://github.com/lazarosY/TripIT/blob/main/UML.png)
 
 
 
