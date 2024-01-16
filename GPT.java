@@ -25,7 +25,7 @@ public static Scanner sc = new Scanner(System.in);
 
     public static String chatGPT(String message) {
         String url = "https://api.openai.com/v1/chat/completions";
-        String apiKey = "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"; 
+        String apiKey = ""; 
         String model = "gpt-3.5-turbo";
 
         try {
