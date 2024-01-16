@@ -94,6 +94,7 @@ Kάνετε cd από το command line στον φάκελο target εντός 
 ## API KEYS 
 
 Σε περίπωτση που δεν διαθέτετε API keys για την openai και τα google places api keys σας παρέχουμε τα παρακάτω:
+(Μέχρι την χρησιμποιήση των κλειδιών λόγω παραβίασης των κανόνων του GitHub μπορεί να έχουν καταργηθεί)
 
 open ai key1: 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
 
