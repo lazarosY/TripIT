@@ -19,7 +19,7 @@ public class PlacesAPIgoogle {
     public static String getplaceid(String x, String y) {
         String lat = x;
         String lng = y;
-        String gapikey = "AIzaSyBz32QZHuvccsYTCsAe9Wxd0RCWO2hXDas";
+        String gapikey = "";
         String purl = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + lng + "&key=" + gapikey;
 
         URL url = null;
