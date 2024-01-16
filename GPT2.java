@@ -9,7 +9,7 @@ import java.net.URL;
 public class GPT2 {
     public static String chatGPT2(String message) {
         String url = "https://api.openai.com/v1/chat/completions";
-        String apiKey = "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";
+        String apiKey = "";
         String model = "gpt-3.5-turbo";
 
         try {
