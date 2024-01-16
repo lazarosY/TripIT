@@ -96,6 +96,8 @@ Kάνετε cd από το command line στον φάκελο target εντός 
 Σε περίπωτση που δεν διαθέτετε API keys για την openai και τα google places api keys σας παρέχουμε τα παρακάτω:
 
 open ai key1: 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
+
 open ai key 2: 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
+
 google places api key: AIzaSyBz32QZHuvccsYTCsAe9Wxd0RCWO2hXDas
 
